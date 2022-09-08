@@ -1,7 +1,7 @@
 package by.lomazki.pokemon.services
 
 import by.lomazki.pokemon.PokemonApi
-import by.lomazki.pokemon.constants.Constants.Companion.BASE_URL
+import by.lomazki.pokemon.constants.Constants.BASE_URL
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.create

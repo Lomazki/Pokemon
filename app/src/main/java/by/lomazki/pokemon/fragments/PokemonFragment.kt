@@ -21,8 +21,6 @@ class PokemonFragment : Fragment() {
 
     private val args by navArgs<PokemonFragmentArgs>()
 
-    private var currentPokemon: Pokemon? = null
-
     private val apiService = ApiService()
 
     //--------------------------------------------------------------------------------------------------
@@ -38,6 +36,8 @@ class PokemonFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        var currentPokemon: Pokemon? = null
 
         val urlPokemon = args.urlPokemon
         apiService.getPokemonApi(urlPokemon).getPokemon()

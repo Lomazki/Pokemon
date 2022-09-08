@@ -30,11 +30,13 @@ class PokemonAdapter(
     companion object {
         private val DIFF_UTIL = object : DiffUtil.ItemCallback<Pokemon>() {
             override fun areItemsTheSame(oldItem: Pokemon, newItem: Pokemon): Boolean {
-                return oldItem.name == newItem.name
+                return oldItem.id == newItem.id
             }
 
             override fun areContentsTheSame(oldItem: Pokemon, newItem: Pokemon): Boolean {
-                return oldItem == newItem
+                return oldItem.name == newItem.name &&
+                        oldItem.height == newItem.height &&
+                        oldItem.weight == newItem.weight
             }
         }
     }

@@ -33,7 +33,7 @@
         android:textSize="40sp"
         tools:text="@tools:sample/first_names" />
 
-    <FrameLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -42,7 +42,10 @@
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             android:text="@string/height"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/tv_height"
@@ -50,11 +53,14 @@
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:textSize="24sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             tools:text="432" />
 
-    </FrameLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <FrameLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -63,7 +69,10 @@
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             android:text="@string/weight"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/tv_weight"
@@ -71,7 +80,10 @@
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:textSize="24sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             tools:text="134" />
 
-    </FrameLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

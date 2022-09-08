@@ -52,31 +52,8 @@ class MainFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        currentRequest =
-            apiService.getPokemonApi()          // этот запрос надо выносить в отдельный метод
-                .getGeneralRequest()
-                .apply {
-                    enqueue(object : Callback<GeneralInfo> {
-                        override fun onResponse(
-                            call: Call<GeneralInfo>,
-                            response: Response<GeneralInfo>
-                        ) {
-                            if (response.isSuccessful) {
-                                val pokemonList = response.body()?.pokemonList ?: return
-                                currentPokemons.addAll(pokemonList)
-                                adapter.submitList(currentPokemons)
-                            } else {
-                                handleException(HttpException(response))
-                            }
-                        }
-
-                        override fun onFailure(call: Call<GeneralInfo>, t: Throwable) {
-                            if (!call.isCanceled) {
-                                handleException(t)
-                            }
-                        }
-                    })
-                }
+        // Запрос
+        executeRequest()
 
         with(binding) {
             recyclerViewPokemon.adapter = adapter
