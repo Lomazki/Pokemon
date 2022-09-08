@@ -40,7 +40,8 @@ class PokemonFragment : Fragment() {
         var currentPokemon: Pokemon? = null
 
         val urlPokemon = args.urlPokemon
-        apiService.getPokemonApi(urlPokemon).getPokemon()
+//        apiService.getPokemonApi(urlPokemon).getPokemon()
+        apiService.getPokemonApi().getPokemon(args.name)
             .apply {
                 enqueue(object : Callback<Pokemon> {
                     override fun onResponse(call: Call<Pokemon>, response: Response<Pokemon>) {

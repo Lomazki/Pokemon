@@ -30,7 +30,7 @@ class MainFragment : Fragment() {
             context = requireContext(),
             onPokemonClicked = {
                 findNavController().navigate(
-                    MainFragmentDirections.actionFragmentMainToFragmentPokemon(it.url)
+                    MainFragmentDirections.actionFragmentMainToFragmentPokemon(it.url, it.name)
                 )
             })
     }
